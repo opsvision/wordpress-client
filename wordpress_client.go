@@ -33,6 +33,8 @@ var (
 	site     string
 )
 
+// WordPressClient is used to interact with a WordPress site using the REST
+// API documented here: https://developer.wordpress.org/rest-api
 type WordPressClient struct{}
 
 func GetClient(siteName string) *WordPressClient {
@@ -52,7 +54,7 @@ func GetClient(siteName string) *WordPressClient {
 }
 
 /**
- * ListPages fetches an array of Page objects from a WordPress site
+ * ListPages retrieves an array of Page objects from a WordPress site
  */
 func (w *WordPressClient) ListPages() (Pages, error) {
 	var pages Pages
@@ -80,7 +82,7 @@ func (w *WordPressClient) ListPages() (Pages, error) {
 }
 
 /**
- * ListPages fetches an array of Page objects from a WordPress site
+ * ListPages retrieves an array of Page objects from a WordPress site
  */
 func (w *WordPressClient) RetrievePage(id int) (Page, error) {
 	var page Page
@@ -107,6 +109,7 @@ func (w *WordPressClient) RetrievePage(id int) (Page, error) {
 	return page, nil
 }
 
+// ListUsers retrieves an array of User objects
 func (w *WordPressClient) ListUsers() (Users, error) {
 	var users Users
 	var buff bytes.Buffer
@@ -132,6 +135,7 @@ func (w *WordPressClient) ListUsers() (Users, error) {
 	return users, nil
 }
 
+// RetrieveUser retrieves a single User object based on the ID
 func (w *WordPressClient) RetrieveUser(id int) (User, error) {
 	var user User
 	var buff bytes.Buffer
