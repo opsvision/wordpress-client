@@ -20,7 +20,7 @@ package wordpress
 type Page struct {
 	Date          string      `json:"date"`
 	DateGmt       string      `json:"date_gmt"`
-	GUID          interface{} `json:"guid"`
+	GUID          GUID        `json:"guid"`
 	ID            int         `json:"id"`
 	Link          string      `json:"link"`
 	Modified      string      `json:"modified"`
@@ -29,10 +29,10 @@ type Page struct {
 	Status        string      `json:"status"`
 	Type          string      `json:"type"`
 	Parent        int         `json:"parent"`
-	Title         interface{} `json:"title"`
-	Content       interface{} `json:"content"`
+	Title         Title       `json:"title"`
+	Content       Content     `json:"content"`
 	Author        int         `json:"author"`
-	Excerpt       interface{} `json:"excerpt"`
+	Excerpt       Excerpt     `json:"excerpt"`
 	FeaturedMedia int         `json:"featured_media"`
 	CommentStatus string      `json:"comment_status"`
 	PingStatus    string      `json:"ping_status"`
