@@ -106,3 +106,53 @@ func (w *WordPressClient) RetrievePage(id int) (Page, error) {
 
 	return page, nil
 }
+
+func (w *WordPressClient) ListUsers() (Users, error) {
+	var users Users
+	var buff bytes.Buffer
+
+	// build url
+	fmt.Fprintf(&buff, "%s/wp-json/wp/v2/users", site)
+
+	resp, err := client.Get(buff.String())
+	if err != nil {
+		return users, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return users, fmt.Errorf("%s", resp.Status)
+	}
+
+	err = json.NewDecoder(resp.Body).Decode(&users)
+	if err != nil {
+		return users, err
+	}
+
+	return users, nil
+}
+
+func (w *WordPressClient) RetrieveUser(id int) (User, error) {
+	var user User
+	var buff bytes.Buffer
+
+	// build url
+	fmt.Fprintf(&buff, "%s/wp-json/wp/v2/users/%d", site, id)
+
+	resp, err := client.Get(buff.String())
+	if err != nil {
+		return user, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return user, fmt.Errorf("%s", resp.Status)
+	}
+
+	err = json.NewDecoder(resp.Body).Decode(&user)
+	if err != nil {
+		return user, err
+	}
+
+	return user, nil
+}

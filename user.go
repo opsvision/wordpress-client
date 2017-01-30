@@ -17,6 +17,32 @@
  */
 package wordpress
 
-type User struct{}
+type User struct {
+	ID                int           `json:"id"`
+	Username          string        `json:"username"`
+	Name              string        `json:"name"`
+	FirstName         string        `json:"first_name"`
+	LastName          string        `json:"last_name"`
+	Email             string        `json:"email"`
+	URL               string        `json:"url"`
+	Description       string        `json:"description"`
+	Link              string        `json:"link"`
+	Locale            string        `json:"locale"`
+	Nickname          string        `json:"nickname"`
+	Slug              string        `json:"slug"`
+	RegisteredDate    string        `json:"registered_date"`
+	Roles             []interface{} `json:"roles"`
+	Password          string        `json:"password"`
+	Capabilities      interface{}   `json:"capabilities"`
+	ExtraCapabilities interface{}   `json:"extra_capabilities"`
+	AvatarURLs        interface{}   `json:"avatar_urls"`
+	Meta              Metas         `json:"meta"`
+}
 
 type Users []User
+
+func (u *User) CreateUser() {}
+
+func (u *User) UpdateUser() {}
+
+func (u *User) DeleteUser() {}
