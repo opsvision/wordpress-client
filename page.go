@@ -42,3 +42,9 @@ type Page struct {
 }
 
 type Pages []Page
+
+func (p *Page) CreatePage() {}
+
+func (p *Page) UpdatePage() {}
+
+func (p *Page) DeletePage() {}
