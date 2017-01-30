@@ -18,27 +18,27 @@
 package wordpress
 
 type Page struct {
-	Date          string      `json:"date"`
-	DateGmt       string      `json:"date_gmt"`
-	GUID          GUID        `json:"guid"`
-	ID            int         `json:"id"`
-	Link          string      `json:"link"`
-	Modified      string      `json:"modified"`
-	ModifiedGmt   string      `json:"modified_gmt"`
-	Slug          string      `json:"slug"`
-	Status        string      `json:"status"`
-	Type          string      `json:"type"`
-	Parent        int         `json:"parent"`
-	Title         Title       `json:"title"`
-	Content       Content     `json:"content"`
-	Author        int         `json:"author"`
-	Excerpt       Excerpt     `json:"excerpt"`
-	FeaturedMedia int         `json:"featured_media"`
-	CommentStatus string      `json:"comment_status"`
-	PingStatus    string      `json:"ping_status"`
-	MenuOrder     int         `json:"menu_order"`
-	Meta          interface{} `json:"meta"`
-	Template      string      `json:"template"`
+	Date          string  `json:"date"`
+	DateGmt       string  `json:"date_gmt"`
+	GUID          GUID    `json:"guid"`
+	ID            int     `json:"id"`
+	Link          string  `json:"link"`
+	Modified      string  `json:"modified"`
+	ModifiedGmt   string  `json:"modified_gmt"`
+	Slug          string  `json:"slug"`
+	Status        string  `json:"status"`
+	Type          string  `json:"type"`
+	Parent        int     `json:"parent"`
+	Title         Title   `json:"title"`
+	Content       Content `json:"content"`
+	Author        int     `json:"author"`
+	Excerpt       Excerpt `json:"excerpt"`
+	FeaturedMedia int     `json:"featured_media"`
+	CommentStatus string  `json:"comment_status"`
+	PingStatus    string  `json:"ping_status"`
+	MenuOrder     int     `json:"menu_order"`
+	Meta          Metas   `json:"meta"`
+	Template      string  `json:"template"`
 }
 
 type Pages []Page
